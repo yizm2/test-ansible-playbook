@@ -1,0 +1,9 @@
+- name: PoC Simple Command Run
+  hosts: all
+  tasks:
+    - name: run command Hostname
+      command: hostname
+      register: return_from_shell
+    - name: show stdout
+      debug:
+        msg: "{{ return_from_shell.stdout }}"
